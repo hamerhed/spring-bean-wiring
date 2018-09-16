@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="khaosLegionsCd" class="pl.hamerhed.discography.DiscographyCd">
+		<constructor-arg index="0" value="Arch Enemy" />
+		<constructor-arg index="1" value="Khaos Legions" />
+		<constructor-arg index="2">
+			<list>
+				<value>Track1</value>
+				<value>Track2</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="warEternalCd" class="pl.hamerhed.discography.DiscographyCd">
+		<constructor-arg index="0" value="Arch Enemy" />
+		<constructor-arg index="1" value="War Eternal" />
+		<constructor-arg index="2">
+			<list>
+				<value>Track1we</value>
+				<value>Track2we</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!--  use namespaces for configuration -->
+	<util:list id="blackEarthTracks">
+		<value>Track1be</value>
+		<value>Track2be</value>
+	</util:list>
+	
+	<bean id="blackEarthCd" class="pl.hamerhed.discography.DiscographyCd"
+		c:_0="Arch Enemy" c:_1="Black Earth" c:_2-ref="blackEarthTracks" />
+	
+
+</beans>
